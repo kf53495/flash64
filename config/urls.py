@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('memory64.urls')),
+    path('selection/', include('memory64.urls')),
 ]
