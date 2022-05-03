@@ -5,3 +5,6 @@ class IndexView(TemplateView):
 
 class SelectionView(TemplateView):
   template_name = 'selection.html'
+
+class MemoryView(TemplateView):
+  template_name = 'memory.html'

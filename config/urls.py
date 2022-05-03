@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('memory64.urls')),
     path('selection/', include('memory64.urls')),
+    path('memory/', include('memory64.urls')),
 ]
