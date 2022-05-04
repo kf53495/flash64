@@ -1,8 +1,10 @@
 const setStoneColor = () => {
-  let stoneColor = document.querySelectorAll('.circle');
+  const stoneColor = document.querySelectorAll('.circle');
   stoneColor.forEach(function(value) {
-    console.log(value);
-    value.style.backgroundColor = "#ffffff"
+    const random = Math.floor(Math.random() * 2);
+    if (random == 0) {
+      value.style.backgroundColor = "#ffffff"
+    };
   });
 }
 
