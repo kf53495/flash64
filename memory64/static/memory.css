@@ -26,3 +26,10 @@ td{
   background: black;
   margin: auto;
 }
+
+.memorised-btn {
+  width: 100px;
+  margin: 5px;
+  border: 2px black solid;
+  background-color: aqua;
+}
