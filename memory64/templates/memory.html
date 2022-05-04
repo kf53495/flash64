@@ -3,9 +3,40 @@
 <html>
   <head>
     <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'memory.css' %}">
   </head>
   <body>
     {% include '_header.html' %}
     これはmemoryページです
+    <div class="board-frame">
+      <div class="board">
+        <table border="1">
+          <tr>
+            <td>a</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>i</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>u</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>e</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
