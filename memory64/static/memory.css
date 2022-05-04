@@ -13,8 +13,16 @@ table {
 }
 
 td{
+  font-size: 30px;
   text-align: center;
   width: 25%;
   height: 25%;
 }
 
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: black;
+  margin: auto;
+}
