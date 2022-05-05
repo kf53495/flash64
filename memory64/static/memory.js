@@ -19,10 +19,9 @@ const hideStones = () => {
       value.setAttribute('id', value.style.backgroundColor);
       value.style.backgroundColor = "#32cd32"
     });
+    document.getElementById('guidance').textContent = '黒石があった場所をクリック'
   };
   btn.addEventListener('click', changeColor);
-
-  document.getElementById('guidance').textContent = '黒石があった場所をクリック'
 };
 
 
