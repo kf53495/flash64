@@ -10,6 +10,7 @@ const setStoneColor = () => {
   });
 };
 
+
 const hideStones = () => {
   const memorizedBtn = document.getElementById('btn')
   const stoneColor = document.querySelectorAll('.circle');
@@ -20,7 +21,10 @@ const hideStones = () => {
     });
   };
   btn.addEventListener('click', changeColor);
+
+  document.getElementById('guidance').textContent = '黒石があった場所をクリック'
 };
+
 
 function answer(event) {
   const stone = event.target;
@@ -30,6 +34,7 @@ function answer(event) {
     stone.style.backgroundColor = "#ffffff"
   };
 }
+
 
 window.addEventListener('DOMContentLoaded', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
