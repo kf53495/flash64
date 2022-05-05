@@ -27,9 +27,13 @@ td{
   margin: auto;
 }
 
-.memorised-btn {
+.memorized-btn-frame {
   width: 100px;
   margin: 5px;
   border: 2px black solid;
   background-color: aqua;
+}
+
+.memorized-btn {
+  margin: auto;
 }
