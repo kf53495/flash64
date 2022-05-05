@@ -4,6 +4,8 @@ const setStoneColor = () => {
     const random = Math.floor(Math.random() * 2);
     if (random == 0) {
       value.style.backgroundColor = "#ffffff"
+    } else {
+      value.style.backgroundColor = '#000000'
     };
   });
 };
@@ -13,16 +15,22 @@ const hideStones = () => {
   const stoneColor = document.querySelectorAll('.circle');
   function changeColor() {
     stoneColor.forEach(function(value) {
-    value.style.backgroundColor = "#32cd32"
+      value.setAttribute('id', value.style.backgroundColor);
+      value.style.backgroundColor = "#32cd32"
     });
   };
   btn.addEventListener('click', changeColor);
 };
-// window.onload = function() {
-//   const memorizedBtn = document.querySelector('.memorized-btn')
-//   console.log(memorizedBtn)
-// }
 
+function answer(event) {
+  const stone = event.target;
+  if (stone.id == 'rgb(0, 0, 0)') {
+    stone.style.backgroundColor = "#000000"
+  } else if (stone.id == 'rgb(255, 255, 255)') {
+    stone.style.backgroundColor = "#ffffff"
+  };
+}
 
 window.addEventListener('DOMContentLoaded', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
+window.addEventListener('click', answer)
