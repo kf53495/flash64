@@ -1,7 +1,5 @@
 from django import forms
 
-
-class TextForm(forms.Form):
-    text = forms.CharField()
-    search = forms.CharField()
-    replace = forms.CharField()
+class SettingForm(forms.Form):
+    size = forms.CharField()
+    # time = forms.CharField() のちに実装予定

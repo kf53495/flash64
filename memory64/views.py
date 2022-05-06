@@ -6,12 +6,13 @@ from . import forms
 class IndexView(TemplateView):
   template_name = 'index.html'
 
-class SelectionView(TemplateView):
+class SelectionView(FormView):
+  form_class = forms.SettingForm
   template_name = 'selection.html'
 
 class MemoryView(TemplateView):
   template_name = 'memory.html'
 
-class TestView(FormView):
-  form_class = forms.TextForm
-  template_name = 'test.html'
+# class TestView(FormView):
+#   form_class = forms.TextForm
+#   template_name = 'test.html'
