@@ -6,6 +6,11 @@
   </head>
   <body>
     {% include '_header.html' %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="あああ"/>
+    </form>
     <a href="/memory/">この条件でチャレンジ</a>
   </body>
 </html>
