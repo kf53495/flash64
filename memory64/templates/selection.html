@@ -6,11 +6,12 @@
   </head>
   <body>
     {% include '_header.html' %}
-    <form method="post">
-      {% for field in form %}
-      {{ field }}
-      {% endfor %}
+    <form action="{% url 'memory' %}" method="post">
       {% csrf_token %}
+      {{ form.as_p }}
+      <!-- {% for field in form %} -->
+      <!-- {{ field }} -->
+      <!-- {% endfor %} -->
       <input type="submit" value="あああ"/>
     </form>
     <a href="/memory/">この条件でチャレンジ</a>

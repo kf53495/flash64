@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from memory64 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('memory64.urls')),
     path('selection/', include('memory64.urls')),
-    path('memory/', include('memory64.urls')),
-    path('test/', include('memory64.urls')),
+    path('memory/', views.settings, name="memory"),
 ]
