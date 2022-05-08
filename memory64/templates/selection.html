@@ -9,11 +9,7 @@
     <form action="{% url 'memory' %}" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <!-- {% for field in form %} -->
-      <!-- {{ field }} -->
-      <!-- {% endfor %} -->
-      <input type="submit" value="あああ"/>
+      <input type="submit" value="この条件でチャレンジ"/>
     </form>
-    <a href="/memory/">この条件でチャレンジ</a>
   </body>
 </html>
