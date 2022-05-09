@@ -53,6 +53,8 @@ const okBtn = () => {
     });
     const result = count - missCount
     document.getElementById('result').textContent = result
+    document.getElementById('finish-btn-frame').style.display = 'none';
+    document.getElementById('result-field').style.display = 'block';
   };
   const finishBtn = document.getElementById('finish')
   finishBtn.addEventListener('click', relocation)
