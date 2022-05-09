@@ -26,15 +26,18 @@ const hideStones = () => {
 };
 
 
+let count = 0
+let miss_count = 0
 function answer(event) {
   const stone = event.target;
   if (stone.id == 'rgb(0, 0, 0)') {
     stone.style.backgroundColor = "#000000"
+    count ++;
   } else if (stone.id == 'rgb(255, 255, 255)') {
     stone.style.backgroundColor = "#ffffff"
+    miss_count ++;
   };
-}
-
+};
 
 window.addEventListener('DOMContentLoaded', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
