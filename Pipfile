@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 gunicorn = "*"
 whitenoise = "*"
+wsgi-basic-auth = "*"
 
 [dev-packages]
 flake8 = "*"
