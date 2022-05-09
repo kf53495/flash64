@@ -12,7 +12,7 @@ const setStoneColor = () => {
 
 
 const hideStones = () => {
-  const memorizedBtn = document.getElementById('btn')
+  const memorizedBtn = document.querySelector('.memorized-btn');
   const stoneColor = document.querySelectorAll('.circle');
   function changeColor() {
     stoneColor.forEach(function(value) {
@@ -22,7 +22,7 @@ const hideStones = () => {
     document.getElementById('guidance').textContent = '黒石があった場所をクリック'
     document.getElementById('btn-frame').style.display ="none";
   };
-  btn.addEventListener('click', changeColor);
+  memorizedBtn.addEventListener('click', changeColor);
 };
 
 
@@ -38,6 +38,14 @@ function answer(event) {
     miss_count ++;
   };
 };
+
+
+// function relocation() {
+//   console.log('ok')
+// };
+// const finishBtn = document.getElementById('finish')
+// console.log(finishBtn)
+// finishBtn.addEventListener('click', relocation)
 
 window.addEventListener('DOMContentLoaded', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
