@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'memory.css' %}">
+    <script src="{% static 'memory.js' %}"></script>
+  </head>
+  <body>
+    {% include '_header.html' %}
+    <div class="guidance" id="guidance">
+      石の配置を覚えよう
+    </div>
+    <div class="board-frame">
+      <div class="board">
+        {% if size == '4' %}
+          {% include '_board4.html' %}
+        {% elif size == '6' %}
+          {% include '_board6.html' %}
+        {% else %}
+          {% include '_board8.html' %}
+        {% endif %} 
+      </div>
+    </div>
+    <div class="memorized-btn-frame" id="btn-frame">
+      <button class="memorized-btn" id="memorized-btn">覚えた！</button>
+    </div>
+    <div class="finish-btn-frame" id="finish-btn-frame">
+      <button class="finish" id="finish">OK</button>
+    </div>
+    <div class="result-field" id="result-field">
+      正解数: <span id="result"></span> /
+      {% if size == '4' %}
+        16
+      {% elif size == '6' %}
+        36
+      {% else %}
+        64
+      {% endif %} 
+      <a href="{% url 'selection' %}" >もう一度挑戦する</a>
+    </div>
+  </body>
+</html>

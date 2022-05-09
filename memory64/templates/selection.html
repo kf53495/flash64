@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+  </head>
+  <body>
+    {% include '_header.html' %}
+    <form action="{% url 'memory' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="この条件でチャレンジ"/>
+    </form>
+  </body>
+</html>
