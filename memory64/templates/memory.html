@@ -28,5 +28,15 @@
     <div>
       <button class="finish" id="finish">OK</button>
     </div>
+    <div>
+      正解数: <span id="result">aaa</span> /
+      {% if size == '4' %}
+        16
+      {% elif size == '6' %}
+        36
+      {% else %}
+        64
+      {% endif %} 
+    </div>
   </body>
 </html>

@@ -27,7 +27,7 @@ const hideStones = () => {
 
 
 let count = 0
-let miss_count = 0
+let missCount = 0
 function answer(event) {
   const stone = event.target;
   if (stone.id == 'rgb(0, 0, 0)') {
@@ -35,7 +35,7 @@ function answer(event) {
     count ++;
   } else if (stone.id == 'rgb(255, 255, 255)') {
     stone.style.backgroundColor = "#ffffff"
-    miss_count ++;
+    missCount ++;
   };
 };
 
@@ -50,9 +50,13 @@ const okBtn = () => {
         value.style.backgroundColor = "#ffffff"
       };
     });
+    const result = count - missCount
+    document.getElementById('result').textContent = result
   };
   const finishBtn = document.getElementById('finish')
   finishBtn.addEventListener('click', relocation)
+
+
 };
 
 
