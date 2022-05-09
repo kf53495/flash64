@@ -40,13 +40,23 @@ function answer(event) {
 };
 
 
-// function relocation() {
-//   console.log('ok')
-// };
-// const finishBtn = document.getElementById('finish')
-// console.log(finishBtn)
-// finishBtn.addEventListener('click', relocation)
+const okBtn = () => {
+  function relocation() {
+    const stoneColor = document.querySelectorAll('.circle');
+    stoneColor.forEach(function(value) {
+      if (value.id == 'rgb(0, 0, 0)') {
+        value.style.backgroundColor = "#000000"
+      } else if (value.id == 'rgb(255, 255, 255)') {
+        value.style.backgroundColor = "#ffffff"
+      };
+    });
+  };
+  const finishBtn = document.getElementById('finish')
+  finishBtn.addEventListener('click', relocation)
+};
+
 
 window.addEventListener('DOMContentLoaded', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
 window.addEventListener('click', answer)
+window.addEventListener('DOMContentLoaded', okBtn)
