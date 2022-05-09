@@ -20,7 +20,8 @@ const hideStones = () => {
       value.style.backgroundColor = "#32cd32"
     });
     document.getElementById('guidance').textContent = '黒石があった場所をクリック'
-    document.getElementById('btn-frame').style.display ="none";
+    document.getElementById('btn-frame').style.display = 'none';
+    document.getElementById('finish-btn-frame').style.display = 'block';
   };
   memorizedBtn.addEventListener('click', changeColor);
 };
@@ -55,8 +56,6 @@ const okBtn = () => {
   };
   const finishBtn = document.getElementById('finish')
   finishBtn.addEventListener('click', relocation)
-
-
 };
 
 

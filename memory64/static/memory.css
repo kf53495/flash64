@@ -66,3 +66,12 @@ table {
   width: 100%;
   margin: auto;
 }
+
+
+.finish-btn-frame {
+  display: none;
+}
+
+.result-field {
+  display: none;
+}
