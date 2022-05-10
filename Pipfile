@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 gunicorn = "*"
 whitenoise = "*"
+dj-database-url = "*"
+python-dotenv = "*"
+mysqlclient = "*"
 
 [dev-packages]
 flake8 = "*"
