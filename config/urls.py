@@ -17,12 +17,14 @@ Including another URLconf
 from django.views.generic import TemplateView, FormView
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.decorators import login_required
 from memory64 import views
 from memory64.views import SelectionView, IndexView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
-    path('selection/', SelectionView.as_view(), name='selection'),
+    path('selection/', login_required(SelectionView.as_view()), name='selection'),
     path('memory/', views.settings, name="memory"),
 ]
