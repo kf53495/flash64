@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.views.generic import TemplateView, FormView
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 from memory64 import views
 from memory64.views import SelectionView, IndexView
@@ -27,4 +27,5 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('selection/', login_required(SelectionView.as_view()), name='selection'),
     path('memory/', views.settings, name="memory"),
+    path('user/', include("django.contrib.auth.urls")),
 ]
