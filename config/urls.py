@@ -24,8 +24,8 @@ from memory64.views import SelectionView, IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'),
+    path('', login_required(IndexView.as_view()), name='index'),
     path('selection/', login_required(SelectionView.as_view()), name='selection'),
-    path('memory/', views.settings, name="memory"),
+    path('memory/', login_required(views.settings), name="memory"),
     path('user/', include("django.contrib.auth.urls")),
 ]
