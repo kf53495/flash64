@@ -10,4 +10,4 @@ class SettingForm(forms.Form):
       required=True,
       widget=forms.widgets.Select
     )
-    # time = forms.CharField() のちに実装予定
+    time = forms.CharField()
