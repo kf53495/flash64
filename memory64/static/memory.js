@@ -51,11 +51,11 @@ function answer(event) {
 const okBtn = () => {
   function relocation() {
     const stoneColor = document.querySelectorAll('.circle');
-    whiteStone = Array.from(document.querySelectorAll('#white')).length;
+    const whiteStone = Array.from(document.querySelectorAll('#white')).length;
     stoneColor.forEach(function(value) {
       if (value.id == 'black') {
         value.style.backgroundColor = "#000000"
-      } else if (value.id == 'white)') {
+      } else if (value.id == 'white') {
         value.style.backgroundColor = "#ffffff"
       };
     });
