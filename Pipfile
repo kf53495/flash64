@@ -11,6 +11,8 @@ dj-database-url = "*"
 python-dotenv = "*"
 mysqlclient = "*"
 django-environ = "*"
+psycopg2 = "*"
+django-heroku = "*"
 
 [dev-packages]
 flake8 = "*"
