@@ -23,7 +23,6 @@ const hideStones = () => {
       } else if (colorId == 'rgb(255, 255, 255)') {
         value.setAttribute('id', 'white')
       };
-      // value.setAttribute('id', value.style.backgroundColor);
       value.style.backgroundColor = "#32cd32"
     });
     document.getElementById('guidance').textContent = '黒石があった場所をクリック'
@@ -52,8 +51,7 @@ function answer(event) {
 const okBtn = () => {
   function relocation() {
     const stoneColor = document.querySelectorAll('.circle');
-    let whiteStone = document.querySelectorAll('#rgb(255, 255, 255)');
-    whiteStone = Array.from(whiteStone);
+    whiteStone = Array.from(document.querySelectorAll('#white')).length;
     stoneColor.forEach(function(value) {
       if (value.id == 'black') {
         value.style.backgroundColor = "#000000"
@@ -61,12 +59,13 @@ const okBtn = () => {
         value.style.backgroundColor = "#ffffff"
       };
     });
-    const result = count - missCount
+    const result = count - missCount + whiteStone
+
     document.getElementById('result').textContent = result
-    console.log(whiteStone);
     document.getElementById('finish-btn-frame').style.display = 'none';
     document.getElementById('result-field').style.display = 'block';
   };
+
   const finishBtn = document.getElementById('finish')
   finishBtn.addEventListener('click', relocation)
 };
