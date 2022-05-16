@@ -23,7 +23,6 @@ from memory64.views import SelectionView, IndexView
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', login_required(IndexView.as_view()), name='index'),
     path('selection/', login_required(SelectionView.as_view()), name='selection'),
     path('memory/', login_required(views.settings), name="memory"),
