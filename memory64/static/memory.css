@@ -1,3 +1,9 @@
+html {
+  overflow-x : hidden;
+  overflow-y : auto;
+  touch-action: manipulation
+}
+
 .board-frame {
   margin-left: 10px;
 }
