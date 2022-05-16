@@ -14,6 +14,7 @@ const setStoneColor = () => {
 const hideStones = () => {
   const memorizedBtn = document.querySelector('.memorized-btn');
   const stoneColor = document.querySelectorAll('.circle');
+
   function changeColor() {
     stoneColor.forEach(function(value) {
       const colorId = value.style.backgroundColor;
@@ -29,17 +30,19 @@ const hideStones = () => {
     document.getElementById('btn-frame').style.display = 'none';
     document.getElementById('finish-btn-frame').style.display = 'block';
   };
+
   memorizedBtn.addEventListener('click', changeColor);
 };
+
 
 let count = 0
 let missCount = 0
 function answer(event) {
   const stone = event.target;
-  if (stone.id == 'rgb(0, 0, 0)') {
+  if (stone.id == 'black') {
     stone.style.backgroundColor = "#000000"
     count ++;
-  } else if (stone.id == 'rgb(255, 255, 255)') {
+  } else if (stone.id == 'white') {
     stone.style.backgroundColor = "#ffffff"
     missCount ++;
   };
@@ -52,9 +55,9 @@ const okBtn = () => {
     let whiteStone = document.querySelectorAll('#rgb(255, 255, 255)');
     whiteStone = Array.from(whiteStone);
     stoneColor.forEach(function(value) {
-      if (value.id == 'rgb(0, 0, 0)') {
+      if (value.id == 'black') {
         value.style.backgroundColor = "#000000"
-      } else if (value.id == 'rgb(255, 255, 255)') {
+      } else if (value.id == 'white)') {
         value.style.backgroundColor = "#ffffff"
       };
     });
