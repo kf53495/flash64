@@ -1,13 +1,22 @@
 const setStoneColor = () => {
-  const stoneColor = document.querySelectorAll('.circle');
-  stoneColor.forEach(function(value) {
-    const random = Math.floor(Math.random() * 2);
-    if (random == 0) {
-      value.style.backgroundColor = "#ffffff"
-    } else {
-      value.style.backgroundColor = '#000000'
-    };
-  });
+  const startBtn = document.getElementById('start-btn')
+  
+  function setStone() {
+    const stoneColor = document.querySelectorAll('.circle');
+    stoneColor.forEach(function(value) {
+      const random = Math.floor(Math.random() * 2);
+      if (random == 0) {
+        value.style.backgroundColor = '#ffffff'
+      } else {
+        value.style.backgroundColor = '#000000'
+      };
+    });
+    document.getElementById('guidance').textContent = '石の配置を覚えよう'
+    document.getElementById('start-btn-frame').style.display = 'none';
+    document.getElementById('memorized-btn-frame').style.display = 'block';
+  };
+
+  startBtn.addEventListener('click', setStone);
   // const timer = document.getElementById('timer');
   // console.log(timer.textContent);
 };
@@ -28,7 +37,7 @@ const hideStones = () => {
       value.style.backgroundColor = "#32cd32"
     });
     document.getElementById('guidance').textContent = '黒石があった場所をクリック'
-    document.getElementById('btn-frame').style.display = 'none';
+    document.getElementById('memorized-btn-frame').style.display = 'none';
     document.getElementById('finish-btn-frame').style.display = 'block';
   };
 
@@ -73,7 +82,7 @@ const okBtn = () => {
 };
 
 
-window.addEventListener('DOMContentLoaded', setStoneColor)
+window.addEventListener('load', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
 window.setTimeout(hideStones, 5000);
 window.addEventListener('click', answer)

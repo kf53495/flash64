@@ -33,7 +33,7 @@ table {
   width: 8vw;
   height: 8vw;
   border-radius: 50%;
-  background: black;
+  background: #32cd32;
   margin: auto;
 }
 
@@ -70,6 +70,7 @@ table {
   margin: 5px;
   border: 2px black solid;
   background-color: aqua;
+  display: none;
 }
 
 .memorized-btn {

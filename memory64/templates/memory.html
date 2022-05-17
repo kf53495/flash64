@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="{% static 'memory.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -29,7 +28,11 @@
       制限時間: 
       <span id="timer">{{ time }}</span>秒
     </div>
-    <div class="memorized-btn-frame" id="btn-frame">
+
+    <div class="start-btn-frame" id="start-btn-frame">
+      <button class="start-btn" id="start-btn">START</button>
+    </div>
+    <div class="memorized-btn-frame" id="memorized-btn-frame">
       <button class="memorized-btn" id="memorized-btn">覚えた！</button>
     </div>
     <div class="finish-btn-frame" id="finish-btn-frame">
@@ -46,5 +49,6 @@
       {% endif %} 
       <a href="{% url 'selection' %}" >もう一度挑戦する</a>
     </div>
+    <link rel="stylesheet" href="{% static 'memory.css' %}">
   </body>
 </html>
