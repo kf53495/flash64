@@ -8,6 +8,8 @@ const setStoneColor = () => {
       value.style.backgroundColor = '#000000'
     };
   });
+  // const timer = document.getElementById('timer');
+  // console.log(timer.textContent);
 };
 
 
@@ -73,5 +75,6 @@ const okBtn = () => {
 
 window.addEventListener('DOMContentLoaded', setStoneColor)
 window.addEventListener('DOMContentLoaded', hideStones)
+window.setTimeout(hideStones, 5000);
 window.addEventListener('click', answer)
 window.addEventListener('DOMContentLoaded', okBtn)
