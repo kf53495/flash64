@@ -1,6 +1,16 @@
+html {
+  overflow-x : hidden;
+  overflow-y : auto;
+  touch-action: manipulation;
+}
+
+.board-frame {
+  margin-left: 10px;
+}
+
 .board4 {
-  width: 200px;
-  height: 200px;
+  width: 40vw;
+  height: 40vw;
   border: 3px black solid;
 }
 
@@ -20,17 +30,17 @@ table {
 }
 
 .circle {
-  width: 38px;
-  height: 38px;
+  width: 8vw;
+  height: 8vw;
   border-radius: 50%;
-  background: black;
+  background: #32cd32;
   margin: auto;
 }
 
 
 .board6 {
-  width: 300px;
-  height: 300px;
+  width: 60vw;
+  height: 60vw;
   border: 3px black solid;
 }
 
@@ -42,8 +52,8 @@ table {
 }
 
 .board8 {
-  width: 400px;
-  height: 400px;
+  width: 80vw;
+  height: 80vw;
   border: 3px black solid;
 }
 
@@ -60,6 +70,7 @@ table {
   margin: 5px;
   border: 2px black solid;
   background-color: aqua;
+  display: none;
 }
 
 .memorized-btn {
