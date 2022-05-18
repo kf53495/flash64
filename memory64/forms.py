@@ -1,5 +1,7 @@
 from django import forms
 
+
+
 class SettingForm(forms.Form):
     size = forms.fields.ChoiceField(
       choices = (
@@ -10,4 +12,13 @@ class SettingForm(forms.Form):
       required=True,
       widget=forms.widgets.Select
     )
-    time = forms.CharField()
+    time = forms.IntegerField(
+      required=False,
+    )
+
+    def clean_time(self):
+      time = self.cleaned_data['time']
+      if time < 1 or time > 101:
+        raise forms.ValidationError('0~100の半角数字で指定してください')
+
+        return time
