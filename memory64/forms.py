@@ -13,12 +13,12 @@ class SettingForm(forms.Form):
       widget=forms.widgets.Select
     )
     time = forms.IntegerField(
-      required=False,
+      required=True,
     )
 
     def clean_time(self):
       time = self.cleaned_data['time']
-      if time < 1 or time > 101:
+      if time < 0 or time > 101:
         raise forms.ValidationError('0~100の半角数字で指定してください')
 
       return time

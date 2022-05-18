@@ -24,10 +24,12 @@
         {% endif %} 
       </div>
     </div>
-    <div class="timer">
-      制限時間: 
-      <span id="timer">{{ time }}</span>秒
-    </div>
+    {% if not time == '0' %}
+      <div class="timer">
+        制限時間: 
+        <span id="timer">{{ time }}</span>秒
+      </div>
+    {% endif %}
 
     <div class="start-btn-frame" id="start-btn-frame">
       <button class="start-btn" id="start-btn">START</button>
