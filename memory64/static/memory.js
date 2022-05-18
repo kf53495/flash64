@@ -12,17 +12,20 @@ const setStoneColor = () => {
     document.getElementById('guidance').textContent = '石の配置を覚えよう'
     document.getElementById('start-btn-frame').style.display = 'none';
     document.getElementById('memorized-btn-frame').style.display = 'block';
-    window.setTimeout(hideStones, timer.textContent * 1000 );
+    if (timer !== null) {
+      window.setTimeout(hideStones, timer.textContent * 1000 );
+    };
+    memorizedBtn.addEventListener('click', hideStones);
   };
 
   const startBtn = document.getElementById('start-btn')
   startBtn.addEventListener('click', setStone);
   const timer = document.getElementById('timer');
+  const memorizedBtn = document.querySelector('.memorized-btn');
 };
 
 
 const hideStones = () => {
-  const memorizedBtn = document.querySelector('.memorized-btn');
   const stoneColor = document.querySelectorAll('.circle');
   stoneColor.forEach(function(value) {
     const colorId = value.style.backgroundColor;
