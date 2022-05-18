@@ -1,6 +1,4 @@
 const setStoneColor = () => {
-  const startBtn = document.getElementById('start-btn')
-  
   function setStone() {
     const stoneColor = document.querySelectorAll('.circle');
     stoneColor.forEach(function(value) {
@@ -14,12 +12,12 @@ const setStoneColor = () => {
     document.getElementById('guidance').textContent = '石の配置を覚えよう'
     document.getElementById('start-btn-frame').style.display = 'none';
     document.getElementById('memorized-btn-frame').style.display = 'block';
-    window.setTimeout(hideStones, 5000);
+    window.setTimeout(hideStones, timer.textContent * 1000 );
   };
 
+  const startBtn = document.getElementById('start-btn')
   startBtn.addEventListener('click', setStone);
-  // const timer = document.getElementById('timer');
-  // console.log(timer.textContent);
+  const timer = document.getElementById('timer');
 };
 
 
