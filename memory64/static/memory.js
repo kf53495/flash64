@@ -14,6 +14,7 @@ const setStoneColor = () => {
     document.getElementById('guidance').textContent = '石の配置を覚えよう'
     document.getElementById('start-btn-frame').style.display = 'none';
     document.getElementById('memorized-btn-frame').style.display = 'block';
+    window.setTimeout(hideStones, 5000);
   };
 
   startBtn.addEventListener('click', setStone);
@@ -25,23 +26,18 @@ const setStoneColor = () => {
 const hideStones = () => {
   const memorizedBtn = document.querySelector('.memorized-btn');
   const stoneColor = document.querySelectorAll('.circle');
-
-  function changeColor() {
-    stoneColor.forEach(function(value) {
-      const colorId = value.style.backgroundColor;
-      if (colorId == 'rgb(0, 0, 0)') {
-        value.setAttribute('id', 'black')
-      } else if (colorId == 'rgb(255, 255, 255)') {
-        value.setAttribute('id', 'white')
-      };
-      value.style.backgroundColor = "#32cd32"
-    });
-    document.getElementById('guidance').textContent = '黒石があった場所をクリック'
-    document.getElementById('memorized-btn-frame').style.display = 'none';
-    document.getElementById('finish-btn-frame').style.display = 'block';
-  };
-
-  memorizedBtn.addEventListener('click', changeColor);
+  stoneColor.forEach(function(value) {
+    const colorId = value.style.backgroundColor;
+    if (colorId == 'rgb(0, 0, 0)') {
+      value.setAttribute('id', 'black')
+    } else if (colorId == 'rgb(255, 255, 255)') {
+      value.setAttribute('id', 'white')
+    };
+    value.style.backgroundColor = "#32cd32"
+  });
+  document.getElementById('guidance').textContent = '黒石があった場所をクリック'
+  document.getElementById('memorized-btn-frame').style.display = 'none';
+  document.getElementById('finish-btn-frame').style.display = 'block';
 };
 
 
@@ -83,7 +79,6 @@ const okBtn = () => {
 
 
 window.addEventListener('load', setStoneColor)
-window.addEventListener('DOMContentLoaded', hideStones)
-window.setTimeout(hideStones, 5000);
+// window.addEventListener('DOMContentLoaded', hideStones)
 window.addEventListener('click', answer)
 window.addEventListener('DOMContentLoaded', okBtn)
