@@ -13,8 +13,14 @@ class SelectionView(FormView):
 
 def settings(request):
   settings = {'size': '', 'time': ''}
-  form = SettingForm(request.POST)
-  if form.is_valid():
-    settings['size'] = request.POST['size']
-    settings['time'] = request.POST['time']
-  return render(request, 'memory.html',settings )
+  if request.method == 'POST':
+    form = SettingForm(request.POST)
+    if form.is_valid():
+      settings['size'] = request.POST['size']
+      settings['time'] = request.POST['time']
+      return render(request, 'memory.html',settings )
+    else: 
+      context = {'form': form }
+      return render(request, 'selection.html', context)
+  else:
+    return render(request, 'index.html')

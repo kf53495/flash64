@@ -21,4 +21,4 @@ class SettingForm(forms.Form):
       if time < 1 or time > 101:
         raise forms.ValidationError('0~100の半角数字で指定してください')
 
-        return time
+      return time
