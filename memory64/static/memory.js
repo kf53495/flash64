@@ -73,10 +73,7 @@ const okBtn = () => {
         value.style.backgroundColor = "#ffffff"
       };
     });
-
     const result = count - missCount + whiteStone
-
-
     document.getElementById('result').textContent = result
     document.getElementById('finish-btn-frame').style.display = 'none';
     document.getElementById('result-field').style.display = 'block';
