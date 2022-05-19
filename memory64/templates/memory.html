@@ -17,8 +17,12 @@
       <div class="board">
         {% if size == '4' %}
           {% include '_board4.html' %}
+        {% elif size == '5' %}
+          {% include '_board5.html' %}
         {% elif size == '6' %}
           {% include '_board6.html' %}
+        {% elif size == '7' %}
+          {% include '_board7.html' %}
         {% else %}
           {% include '_board8.html' %}
         {% endif %} 
@@ -44,8 +48,12 @@
       正解数: <span id="result"></span> /
       {% if size == '4' %}
         16
+      {% elif size == '5' %}
+        25
       {% elif size == '6' %}
         36
+      {% elif size == '7' %}
+        49
       {% else %}
         64
       {% endif %} 

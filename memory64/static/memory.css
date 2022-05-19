@@ -37,6 +37,18 @@ table {
   margin: auto;
 }
 
+.board5 {
+  width: 50vw;
+  height: 50vw;
+  border: 3px black solid;
+}
+
+.td5 {
+  font-size: 30px;
+  text-align: center;
+  width: calc(100% / 5);
+  height: calc(100% / 5);
+}
 
 .board6 {
   width: 60vw;
@@ -44,11 +56,24 @@ table {
   border: 3px black solid;
 }
 
-.td6{
+.td6 {
   font-size: 30px;
   text-align: center;
   width: calc(100% / 6);
   height: calc(100% / 6);
+}
+
+.board7 {
+  width: 70vw;
+  height: 70vw;
+  border: 3px black solid;
+}
+
+.td7 {
+  font-size: 30px;
+  text-align: center;
+  width: calc(100% / 7);
+  height: calc(100% / 7);
 }
 
 .board8 {
