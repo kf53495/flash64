@@ -14,6 +14,7 @@ class SettingForm(forms.Form):
     )
     time = forms.IntegerField(
       required=True,
+      initial=0,
     )
 
     def clean_time(self):
