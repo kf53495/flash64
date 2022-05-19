@@ -23,9 +23,5 @@ def settings(request):
     else: 
       context = {'form': form }
       return render(request, 'selection.html', context)
-  # elif request.method == 'GET':
-  #   form = SettingForm(request.GET)
-  #   context = {'form': form }
-  #   return render(request, 'memory.html', context)
   else:
     return render(request, 'index.html')
