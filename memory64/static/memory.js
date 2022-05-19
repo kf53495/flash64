@@ -50,9 +50,11 @@ function answer(event) {
   if (stone.id == 'black') {
     stone.style.backgroundColor = "#000000"
     count ++;
+    stone.id = 'correct'
   } else if (stone.id == 'white') {
     stone.style.backgroundColor = "#ffffff"
     missCount ++;
+    stone.parentNode.id = 'incorrect'
   };
 };
 
@@ -64,11 +66,16 @@ const okBtn = () => {
     stoneColor.forEach(function(value) {
       if (value.id == 'black') {
         value.style.backgroundColor = "#000000"
+        value.parentNode.style.backgroundColor = "#cd5c5c"
+      } else if (value.parentNode.id == 'incorrect') {
+        value.parentNode.style.backgroundColor = "#cd5c5c"
       } else if (value.id == 'white') {
         value.style.backgroundColor = "#ffffff"
       };
     });
+
     const result = count - missCount + whiteStone
+
 
     document.getElementById('result').textContent = result
     document.getElementById('finish-btn-frame').style.display = 'none';
