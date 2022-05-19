@@ -12,6 +12,7 @@ class SelectionView(FormView):
   template_name = 'selection.html'
 
 def settings(request):
+  form_class = forms.SettingForm
   settings = {'size': '', 'time': ''}
   if request.method == 'POST':
     form = SettingForm(request.POST)
@@ -22,5 +23,9 @@ def settings(request):
     else: 
       context = {'form': form }
       return render(request, 'selection.html', context)
+  # elif request.method == 'GET':
+  #   form = SettingForm(request.GET)
+  #   context = {'form': form }
+  #   return render(request, 'memory.html', context)
   else:
     return render(request, 'index.html')
