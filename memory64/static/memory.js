@@ -13,7 +13,7 @@ const setStoneColor = () => {
     document.getElementById('start-btn-frame').style.display = 'none';
     document.getElementById('memorized-btn-frame').style.display = 'block';
     if (timer !== null) {
-      window.setTimeout(hideStones, timer.textContent * 1000 );
+      timerID = window.setTimeout(hideStones, timer.textContent * 1000 );
     };
     memorizedBtn.addEventListener('click', hideStones);
   };
@@ -39,6 +39,7 @@ const hideStones = () => {
   document.getElementById('guidance').textContent = '黒石があった場所をクリック'
   document.getElementById('memorized-btn-frame').style.display = 'none';
   document.getElementById('finish-btn-frame').style.display = 'block';
+  clearTimeout(timerID)
 };
 
 
@@ -80,6 +81,5 @@ const okBtn = () => {
 
 
 window.addEventListener('load', setStoneColor)
-// window.addEventListener('DOMContentLoaded', hideStones)
 window.addEventListener('click', answer)
 window.addEventListener('DOMContentLoaded', okBtn)
