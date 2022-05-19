@@ -13,7 +13,7 @@ const setStoneColor = () => {
     document.getElementById('start-btn-frame').style.display = 'none';
     document.getElementById('memorized-btn-frame').style.display = 'block';
     if (timer !== null) {
-      window.setTimeout(hideStones, timer.textContent * 1000 );
+      timerID = window.setTimeout(hideStones, timer.textContent * 1000 );
     };
     memorizedBtn.addEventListener('click', hideStones);
   };
@@ -39,6 +39,7 @@ const hideStones = () => {
   document.getElementById('guidance').textContent = '黒石があった場所をクリック'
   document.getElementById('memorized-btn-frame').style.display = 'none';
   document.getElementById('finish-btn-frame').style.display = 'block';
+  clearTimeout(timerID)
 };
 
 
@@ -49,9 +50,11 @@ function answer(event) {
   if (stone.id == 'black') {
     stone.style.backgroundColor = "#000000"
     count ++;
+    stone.id = 'correct'
   } else if (stone.id == 'white') {
     stone.style.backgroundColor = "#ffffff"
     missCount ++;
+    stone.parentNode.id = 'incorrect'
   };
 };
 
@@ -63,12 +66,14 @@ const okBtn = () => {
     stoneColor.forEach(function(value) {
       if (value.id == 'black') {
         value.style.backgroundColor = "#000000"
+        value.parentNode.style.backgroundColor = "#cd5c5c"
+      } else if (value.parentNode.id == 'incorrect') {
+        value.parentNode.style.backgroundColor = "#cd5c5c"
       } else if (value.id == 'white') {
         value.style.backgroundColor = "#ffffff"
       };
     });
     const result = count - missCount + whiteStone
-
     document.getElementById('result').textContent = result
     document.getElementById('finish-btn-frame').style.display = 'none';
     document.getElementById('result-field').style.display = 'block';
@@ -80,6 +85,5 @@ const okBtn = () => {
 
 
 window.addEventListener('load', setStoneColor)
-// window.addEventListener('DOMContentLoaded', hideStones)
 window.addEventListener('click', answer)
 window.addEventListener('DOMContentLoaded', okBtn)

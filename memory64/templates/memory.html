@@ -49,7 +49,17 @@
       {% else %}
         64
       {% endif %} 
-      <a href="{% url 'selection' %}" >もう一度挑戦する</a>
+      <div>
+        <form method="post">
+          <div class="retry-form">
+            {% csrf_token %}
+            <input type="hidden" value="{{ size }}" name="size">
+            <input type="hidden" value="{{ time }}" name="time">
+          </div>
+          <input type="submit" value="同じ条件でチャレンジ"/>
+        </form>
+        <a href="{% url 'selection' %}" >条件を変えてチャレンジ</a>
+      </div>
     </div>
     <link rel="stylesheet" href="{% static 'memory.css' %}">
   </body>
