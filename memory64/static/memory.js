@@ -75,6 +75,7 @@ const okBtn = () => {
     });
     const result = count - missCount + whiteStone
     document.getElementById('result').textContent = result
+    document.getElementById('guidance').textContent = 'Result'
     document.getElementById('finish-btn-frame').style.display = 'none';
     document.getElementById('result-field').style.display = 'block';
   };
